@@ -1,0 +1,123 @@
+[
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw635980fb/landingpage/ecvan/spec.webp",
+    "filename": "001_spec.webp",
+    "content_type": "image/webp",
+    "size_bytes": 5566,
+    "sha256": "9d8fe000217bb3e4e98a13b8eccdf91f47c3c096e18fb93d84e67e043259277f",
+    "width": 184,
+    "height": 184,
+    "alt": null,
+    "local_path": "images/001_spec.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw4a977007/landingpage/ecvan/banner.webp",
+    "filename": "002_banner.webp",
+    "content_type": "image/webp",
+    "size_bytes": 580364,
+    "sha256": "ab9341aeac5442dfcac1fe8a713a560e84234d9d9f2823eb04e4d538174e63fd",
+    "width": 3840,
+    "height": 2000,
+    "alt": null,
+    "local_path": "images/002_banner.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dwebf42c7b/landingpage/ecvan/ecvan-jade.webp",
+    "filename": "003_ecvan-jade.webp",
+    "content_type": "image/webp",
+    "size_bytes": 116898,
+    "sha256": "c0b9a10d890b62ebf8c2ab79ce865c3a9a584dbf30266fbb00e88d207687e013",
+    "width": 1403,
+    "height": 892,
+    "alt": null,
+    "local_path": "images/003_ecvan-jade.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dwab63881b/landingpage/ecvan/ecvan-white.webp",
+    "filename": "004_ecvan-white.webp",
+    "content_type": "image/webp",
+    "size_bytes": 111290,
+    "sha256": "f34f233022e0bcdb05bd37c64ce7a8ccef146612942a26dd929c66113445298a",
+    "width": 1403,
+    "height": 892,
+    "alt": null,
+    "local_path": "images/004_ecvan-white.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw9c284dea/landingpage/ecvan/ecvan-red.webp",
+    "filename": "005_ecvan-red.webp",
+    "content_type": "image/webp",
+    "size_bytes": 122678,
+    "sha256": "450410c2fbe81f4afca76d55174274fd5ef1f495eb06bfe827b620a80abd1afc",
+    "width": 1403,
+    "height": 892,
+    "alt": null,
+    "local_path": "images/005_ecvan-red.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw7898b277/landingpage/ecvan/ecvan-yellow.webp",
+    "filename": "006_ecvan-yellow.webp",
+    "content_type": "image/webp",
+    "size_bytes": 128860,
+    "sha256": "ff31b426dafbf07ffceb03256fa04c0383990d86e04950e422911e446e59b7f4",
+    "width": 1403,
+    "height": 892,
+    "alt": null,
+    "local_path": "images/006_ecvan-yellow.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dwd1898213/landingpage/ecvan/ecvan-img-04.webp",
+    "filename": "007_ecvan-img-04.webp",
+    "content_type": "image/webp",
+    "size_bytes": 121542,
+    "sha256": "9724ed8e2cfe01c3448221d0a62d150eb62bbb3f34de2d7b26bcbdd494be1130",
+    "width": 1920,
+    "height": 1080,
+    "alt": null,
+    "local_path": "images/007_ecvan-img-04.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw07d506f1/landingpage/ecvan/ecvan-img-01.webp",
+    "filename": "008_ecvan-img-01.webp",
+    "content_type": "image/webp",
+    "size_bytes": 161320,
+    "sha256": "c6f7aa1f91b85bad8a01f198b4d27a2f53e12f69a5a7412b1c4465ed2ef3d7fe",
+    "width": 1920,
+    "height": 1080,
+    "alt": null,
+    "local_path": "images/008_ecvan-img-01.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw42eb4e46/landingpage/ecvan/ecvan-img-02.webp",
+    "filename": "009_ecvan-img-02.webp",
+    "content_type": "image/webp",
+    "size_bytes": 159594,
+    "sha256": "a1ef5b7cdf4a6bb1792fa8d25fafcaf89c7335cf9d20af7f083fd5f5756d5106",
+    "width": 1920,
+    "height": 1080,
+    "alt": null,
+    "local_path": "images/009_ecvan-img-02.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw6afcbe67/landingpage/ecvan/ecvan-img-03.webp",
+    "filename": "010_ecvan-img-03.webp",
+    "content_type": "image/webp",
+    "size_bytes": 148666,
+    "sha256": "5150c6ec028584c7084c278b5315a9ad14c2058e0b860973c32857bf0e41a02a",
+    "width": 1920,
+    "height": 1080,
+    "alt": null,
+    "local_path": "images/010_ecvan-img-03.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw32a6625c/landingpage/ecvan/ecvan-banner-01.webp",
+    "filename": "011_ecvan-banner-01.webp",
+    "content_type": "image/webp",
+    "size_bytes": 996818,
+    "sha256": "5782566a06dba2bd8e0f9a64ac525d456b4f660c40a3bee91fa576bc8bb49878",
+    "width": 3840,
+    "height": 2160,
+    "alt": null,
+    "local_path": "images/011_ecvan-banner-01.webp"
+  }
+]

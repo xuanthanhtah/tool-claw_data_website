@@ -140,38 +140,41 @@ class VinFastDOMParser:
         specs: List[SpecificationItem] = []
         seen_names = set()
 
-        # Check all possible specification cards across portal and shop templates
+        # Target specification items across all templates
         spec_items = self.body_container.select(
-            '[class*="spec-item"], [class*="section-6-grid"] > div, '
+            '.parameter-item, [class*="spec-item"], [class*="section-6-grid"] > div, '
             '[class*="spec-grid"] > div, [class*="specs-grid"] > div, '
             '[class*="-spec-item"], #specs-block div, .parameter-block div, [class*="-spec"] div'
         )
 
         for card in spec_items:
-            # Skip large wrappers
-            if len(card.select("div")) > 4:
-                continue
+            # Check if card has explicit label + span (e.g. .parameter-item)
+            label_tag = card.find("label")
+            span_tag = card.find("span")
+            if label_tag and span_tag and label_tag != span_tag:
+                name = label_tag.get_text(separator=" ", strip=True)
+                value = span_tag.get_text(separator=" ", strip=True)
+            else:
+                if len(card.select("div")) > 4:
+                    continue
 
-            lines = [l.strip() for l in card.get_text(separator="\n").splitlines() if l.strip()]
-            if not lines or len(lines) > 4:
-                continue
+                lines = [l.strip() for l in card.get_text(separator="\n").splitlines() if l.strip()]
+                if not lines or len(lines) > 4:
+                    continue
 
-            # Skip button or general notes
-            if any(x in lines[0] for x in ["ĐẶT CỌC", "Thông số", "Lưu ý", "LÁI THỬ"]):
-                continue
+                if any(x in lines[0] for x in ["ĐẶT CỌC", "Thông số", "Lưu ý", "LÁI THỬ"]):
+                    continue
 
-            name, value = "", ""
-            if len(lines) == 2:
-                # e.g. ["Dài x rộng x Cao (mm)", "4300 x 1768 x 1615"] or ["4740 x 1872 x 1729", "Dài x rộng x Cao (mm)"]
-                l1, l2 = lines[0], lines[1]
-                if any(kw in l1.lower() for kw in ["dài", "rộng", "cao", "công suất", "mô men", "quãng đường", "pin", "sạc", "treo", "phanh", "la-zăng", "đèn", "cốp", "điều hòa", "màn hình", "loa", "ghế", "dẫn động", "chế độ", "cơ sở", "gầm"]):
-                    name, value = l1, l2
-                else:
-                    name, value = l2, l1
-            elif len(lines) == 3:
-                # e.g. ["2514", "mm", "Chiều dài cơ sở"]
-                name = lines[-1]
-                value = f"{lines[0]} {lines[1]}"
+                name, value = "", ""
+                if len(lines) == 2:
+                    l1, l2 = lines[0], lines[1]
+                    if any(kw in l1.lower() for kw in ["dài", "rộng", "cao", "công suất", "mô men", "quãng đường", "pin", "sạc", "treo", "phanh", "la-zăng", "đèn", "cốp", "điều hòa", "màn hình", "loa", "ghế", "dẫn động", "chế độ", "cơ sở", "gầm", "bán kính", "dung tích", "chỗ ngồi"]):
+                        name, value = l1, l2
+                    else:
+                        name, value = l2, l1
+                elif len(lines) == 3:
+                    name = lines[-1]
+                    value = f"{lines[0]} {lines[1]}"
 
             if name and value and len(name) < 60 and len(value) < 60:
                 if name not in seen_names:
