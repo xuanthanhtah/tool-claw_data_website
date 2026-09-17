@@ -1,0 +1,233 @@
+[
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-section-2-car.webp",
+    "filename": "001_herio-green-section-2-car.webp",
+    "content_type": "image/webp",
+    "size_bytes": 37994,
+    "sha256": "6ffc78ce78266d9fe18106c16f2c91a00e2b235214778637e5055b4c20e18f8a",
+    "width": 832,
+    "height": 554,
+    "alt": null,
+    "local_path": "images/001_herio-green-section-2-car.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/color-black.webp",
+    "filename": "002_color-black.webp",
+    "content_type": "image/webp",
+    "size_bytes": 1232,
+    "sha256": "ebde47b06ea0d46af6453edf43abdb738d4159ea39aa8f9bfab248a7d47d5bbd",
+    "width": 40,
+    "height": 40,
+    "alt": null,
+    "local_path": "images/002_color-black.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/color-silver.webp",
+    "filename": "003_color-silver.webp",
+    "content_type": "image/webp",
+    "size_bytes": 1016,
+    "sha256": "ffc30d7e372096b2dae2806cac80f3b5b8dffc1089216117581557030c86e724",
+    "width": 40,
+    "height": 40,
+    "alt": null,
+    "local_path": "images/003_color-silver.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/color-red.webp",
+    "filename": "004_color-red.webp",
+    "content_type": "image/webp",
+    "size_bytes": 1292,
+    "sha256": "07f29307628f8e4bca1e27e3ff37493fb67c3e02382b5cf9b9da11a43a088d1d",
+    "width": 40,
+    "height": 40,
+    "alt": null,
+    "local_path": "images/004_color-red.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-section2-logo.webp",
+    "filename": "005_herio-green-section2-logo.webp",
+    "content_type": "image/webp",
+    "size_bytes": 11704,
+    "sha256": "ca35dd510efadc9db6a867974b31e78a41875ad59d54d110648a6e385377e572",
+    "width": 1517,
+    "height": 104,
+    "alt": null,
+    "local_path": "images/005_herio-green-section2-logo.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/parallax-2.webp",
+    "filename": "006_parallax-2.webp",
+    "content_type": "image/webp",
+    "size_bytes": 23618,
+    "sha256": "d6769bc1a709eee77eb493867acb6871b012082956206e0e755da52e56d9dfed",
+    "width": 546,
+    "height": 404,
+    "alt": null,
+    "local_path": "images/006_parallax-2.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-logo-section-4.webp",
+    "filename": "007_herio-green-logo-section-4.webp",
+    "content_type": "image/webp",
+    "size_bytes": 24748,
+    "sha256": "6334d823ef56f98e24897046b99b5b1470d04ae9bb20be89c10cacef914f4846",
+    "width": 1920,
+    "height": 828,
+    "alt": null,
+    "local_path": "images/007_herio-green-logo-section-4.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-section-2-background.webp",
+    "filename": "008_herio-green-section-2-background.webp",
+    "content_type": "image/webp",
+    "size_bytes": 24970,
+    "sha256": "aa11827d7613e169cb34bf4295c26f5cce8c34e7c8f67523d1133c643648b6b8",
+    "width": 2880,
+    "height": 506,
+    "alt": null,
+    "local_path": "images/008_herio-green-section-2-background.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/parallax-3.webp",
+    "filename": "009_parallax-3.webp",
+    "content_type": "image/webp",
+    "size_bytes": 22216,
+    "sha256": "45b6e4ec325c78b25c1dbc03b1d2beeb8c5ace8300d382f5b1afb1e0e2344302",
+    "width": 539,
+    "height": 404,
+    "alt": null,
+    "local_path": "images/009_parallax-3.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/parallax-4.webp",
+    "filename": "010_parallax-4.webp",
+    "content_type": "image/webp",
+    "size_bytes": 19270,
+    "sha256": "80000f8b9feff70a415584bbac51147ec1bfae0d0fe568a1241d77fbc5216071",
+    "width": 539,
+    "height": 404,
+    "alt": null,
+    "local_path": "images/010_parallax-4.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/parallax-1.webp",
+    "filename": "011_parallax-1.webp",
+    "content_type": "image/webp",
+    "size_bytes": 18674,
+    "sha256": "5e7f2b609642f9af80f5f099b94bfca1fa6a51d53b3c89b836f0c0dd9ea88f4a",
+    "width": 539,
+    "height": 404,
+    "alt": null,
+    "local_path": "images/011_parallax-1.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-section-5-background.webp",
+    "filename": "012_herio-green-section-5-background.webp",
+    "content_type": "image/webp",
+    "size_bytes": 80982,
+    "sha256": "be22de451583f9d1e3e59b2e2149ab44616793b0596d5c4372f979057e4d96cf",
+    "width": 1920,
+    "height": 1344,
+    "alt": null,
+    "local_path": "images/012_herio-green-section-5-background.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/Banner-new.webp",
+    "filename": "013_Banner-new.webp",
+    "content_type": "image/webp",
+    "size_bytes": 85678,
+    "sha256": "3827add68aa3ef3b48b88287e835e48260d1ab4ea6b8b6ebe621ebd7a0068d40",
+    "width": 1920,
+    "height": 1036,
+    "alt": null,
+    "local_path": "images/013_Banner-new.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-section-3-2.webp",
+    "filename": "014_herio-green-section-3-2.webp",
+    "content_type": "image/webp",
+    "size_bytes": 88464,
+    "sha256": "5c8aa5edd550808d6751ed33ad421d92316198deea35b3c1936a698b30d71650",
+    "width": 2220,
+    "height": 2220,
+    "alt": null,
+    "local_path": "images/014_herio-green-section-3-2.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/Hero-new.webp",
+    "filename": "015_Hero-new.webp",
+    "content_type": "image/webp",
+    "size_bytes": 113680,
+    "sha256": "c21cac3bd3447cd924dac13f807561eb67d62efe6769024aa053721436c04fa8",
+    "width": 1920,
+    "height": 1080,
+    "alt": null,
+    "local_path": "images/015_Hero-new.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-section-3-background.webp",
+    "filename": "016_herio-green-section-3-background.webp",
+    "content_type": "image/webp",
+    "size_bytes": 102304,
+    "sha256": "161eb8831d1a68b2e7f87ff05a9af65e0b784df939b626ebfde1ce7041a1a1a0",
+    "width": 3372,
+    "height": 2345,
+    "alt": null,
+    "local_path": "images/016_herio-green-section-3-background.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-section-3-3.webp",
+    "filename": "017_herio-green-section-3-3.webp",
+    "content_type": "image/webp",
+    "size_bytes": 115960,
+    "sha256": "41a2e08bcd27be849e8fa8d7eceea0e9f135d0612b24a6257cd2d5add5ea0f66",
+    "width": 2220,
+    "height": 2220,
+    "alt": null,
+    "local_path": "images/017_herio-green-section-3-3.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/color/herio-black.webp",
+    "filename": "018_herio-black.webp",
+    "content_type": "image/webp",
+    "size_bytes": 191764,
+    "sha256": "be2aecf4de8cf3d15e102f80f029041f5d1be4205929632be14b8b4c5c662009",
+    "width": 4268,
+    "height": 2400,
+    "alt": null,
+    "local_path": "images/018_herio-black.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/Minio.webp",
+    "filename": "019_Minio.webp",
+    "content_type": "image/webp",
+    "size_bytes": 220572,
+    "sha256": "1361a45e2a64a9fc10cc26e1674a05a5b2bc816869808a0678a03d513f6e0db4",
+    "width": 4268,
+    "height": 2400,
+    "alt": null,
+    "local_path": "images/019_Minio.webp"
+  },
+  {
+    "url": "https://vinfastauto.com/themes/porto/img/pdp-page/herio-green/herio-green-section-3-1.webp",
+    "filename": "020_herio-green-section-3-1.webp",
+    "content_type": "image/webp",
+    "size_bytes": 287102,
+    "sha256": "28bc18335cd5404acfb3a706d4b705772456f0326636a78b26fef69964c4ba6d",
+    "width": 4560,
+    "height": 2250,
+    "alt": null,
+    "local_path": "images/020_herio-green-section-3-1.webp"
+  },
+  {
+    "url": "https://static-cms-prod.vinfastauto.com/fuel_cost_comparison/11443-1787051531-herio-fuel-cost.png",
+    "filename": "021_11443-1787051531-herio-fuel-cost.png",
+    "content_type": "image/webp",
+    "size_bytes": 9202,
+    "sha256": "73f1b8dacacbf39fb57418d489d12ced2982848fed2d1a57671dd5e79d9bbe27",
+    "width": 230,
+    "height": 128,
+    "alt": null,
+    "local_path": "images/021_11443-1787051531-herio-fuel-cost.png"
+  }
+]
