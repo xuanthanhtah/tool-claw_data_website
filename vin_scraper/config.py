@@ -13,17 +13,18 @@ def get_slug_from_url(url: str) -> str:
     """
     Extracts a clean, filesystem-safe folder slug from a URL.
     E.g. 'https://vinfastauto.com/vn_vi/herio-green' -> 'herio-green'
-    E.g. 'https://vinfastauto.com/vn_vi/vf-3/?ref=1' -> 'vf-3'
+    E.g. 'https://shop.vinfastauto.com/vn_vi/nerio-green.html' -> 'nerio-green'
     """
     parsed = urlparse(url.strip())
     path = parsed.path.strip("/")
     if not path:
-        # Fallback to hostname if no path
         slug = parsed.netloc or "vinfast-data"
     else:
-        # Get the last non-empty segment
         segments = [s for s in path.split("/") if s]
         slug = segments[-1] if segments else "vinfast-data"
+
+    # Strip web extensions like .html, .htm, .php
+    slug = re.sub(r'\.(html|htm|php|aspx|jsp)$', '', slug, flags=re.IGNORECASE)
 
     # Sanitize slug
     slug = re.sub(r'[^a-zA-Z0-9_\-]', '-', slug).strip("-")

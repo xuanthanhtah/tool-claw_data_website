@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw5d39e8c5/landingpage/vgreen/nerio-green/logonerio.webp",
+    "filename": "001_logonerio.webp",
+    "content_type": "image/webp",
+    "size_bytes": 14506,
+    "sha256": "4d3e01b88de91af5435a9e706f99ca9c1da9c287de2b26d1328dbf6fbe2ff98d",
+    "width": 1376,
+    "height": 96,
+    "alt": null,
+    "local_path": "images/001_logonerio.webp"
+  },
+  {
+    "url": "https://shop.vinfastauto.com/on/demandware.static/-/Sites-app_vinfast_vn-Library/default/dw76572c15/landingpage/vgreen/nerio-green/nerio-green_update.webp",
+    "filename": "002_nerio-green_update.webp",
+    "content_type": "image/webp",
+    "size_bytes": 112452,
+    "sha256": "4aaf13b42c1c84bca3be84dc4e3e2ad522579aa9d7b116ca1463ae5c691e53eb",
+    "width": 1440,
+    "height": 700,
+    "alt": null,
+    "local_path": "images/002_nerio-green_update.webp"
+  }
+]

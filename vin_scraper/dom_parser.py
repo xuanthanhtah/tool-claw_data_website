@@ -1,6 +1,6 @@
 """
 DOM Parser for extracting structured body content, metadata, specifications, and sections
-across all VinFast vehicle PDP templates.
+across all VinFast vehicle PDP and Shop templates.
 """
 
 import re
@@ -26,7 +26,8 @@ class VinFastDOMParser:
     EXCLUDE_SELECTORS = (
         "header, footer, .block-megamainmenu, .header-container, "
         "#block-vinfast-saigon-footer, #onetrust-consent-sdk, .livechat, "
-        ".vinbase, #chat-box, .modal, .modal-dialog, script, style, noscript, svg, nav"
+        ".vinbase, #chat-box, .modal, .modal-dialog, script, style, noscript, svg, nav, "
+        ".experience-header, .experience-footer"
     )
 
     def __init__(self, html: str, url: str):
@@ -43,6 +44,7 @@ class VinFastDOMParser:
 
         main_node = (
             doc.select_one(".block-system-main-block")
+            or doc.select_one(".page-wrapper")
             or doc.select_one("main")
             or doc.select_one("#main-content")
             or doc.select_one(".main-container")
@@ -88,7 +90,6 @@ class VinFastDOMParser:
         """Extracts high-level highlight stats across all PDP templates."""
         stats: List[KeyStat] = []
         
-        # General selectors for highlight stats across Herio, Limo, Minio, Nerio, VF3, VF8 etc.
         stat_containers = self.body_container.select(
             '[class*="stat-item"], [class*="stat-row"], [class*="stats-grid"] > div, '
             '[class*="hero-stat"], [class*="-specs-list"] > [class*="-spec-row"], '
@@ -122,11 +123,9 @@ class VinFastDOMParser:
                     label = lines[2]
                     stats.append(KeyStat(label=label, value=val, unit=unit))
 
-        # Deduplicate stats
         unique_stats: List[KeyStat] = []
         seen = set()
         for s in stats:
-            # Skip noise or non-stat items
             if any(w in s.label.lower() for w in ["đặt cọc", "giá kèm pin", "dự toán"]):
                 continue
             key = f"{s.label}:{s.value}"
@@ -137,45 +136,44 @@ class VinFastDOMParser:
         return unique_stats
 
     def extract_specifications(self) -> List[SpecificationItem]:
-        """Extracts detailed technical specifications from grid cards and tables."""
+        """Extracts detailed technical specifications from grid cards, lists, and tables."""
         specs: List[SpecificationItem] = []
         seen_names = set()
 
-        # Target specification cards across all PDP templates
+        # Check all possible specification cards across portal and shop templates
         spec_items = self.body_container.select(
             '[class*="spec-item"], [class*="section-6-grid"] > div, '
             '[class*="spec-grid"] > div, [class*="specs-grid"] > div, '
-            '[class*="-spec-item"]'
+            '[class*="-spec-item"], #specs-block div, .parameter-block div, [class*="-spec"] div'
         )
 
         for card in spec_items:
-            label_el = card.select_one('[class*="label"], [class*="title"], [class*="desc"], p:last-child')
-            val_el = card.select_one('[class*="value"], [class*="num"], [class*="number"], p:first-child, h3, h4')
+            # Skip large wrappers
+            if len(card.select("div")) > 4:
+                continue
 
-            name = ""
-            value = ""
+            lines = [l.strip() for l in card.get_text(separator="\n").splitlines() if l.strip()]
+            if not lines or len(lines) > 4:
+                continue
 
-            if label_el and val_el and label_el != val_el:
-                name = label_el.get_text(separator=" ", strip=True)
-                value = val_el.get_text(separator=" ", strip=True)
-            else:
-                card_children = [c for c in card.children if isinstance(c, Tag) and c.get_text(strip=True)]
-                if len(card_children) == 2:
-                    t1 = card_children[0].get_text(separator=" ", strip=True)
-                    t2 = card_children[1].get_text(separator=" ", strip=True)
-                    value, name = t1, t2
-                elif len(card_children) >= 3:
-                    t_last = card_children[-1].get_text(separator=" ", strip=True)
-                    t_rest = " ".join([c.get_text(separator=" ", strip=True) for c in card_children[:-1]])
-                    value, name = t_rest, t_last
+            # Skip button or general notes
+            if any(x in lines[0] for x in ["ĐẶT CỌC", "Thông số", "Lưu ý", "LÁI THỬ"]):
+                continue
+
+            name, value = "", ""
+            if len(lines) == 2:
+                # e.g. ["Dài x rộng x Cao (mm)", "4300 x 1768 x 1615"] or ["4740 x 1872 x 1729", "Dài x rộng x Cao (mm)"]
+                l1, l2 = lines[0], lines[1]
+                if any(kw in l1.lower() for kw in ["dài", "rộng", "cao", "công suất", "mô men", "quãng đường", "pin", "sạc", "treo", "phanh", "la-zăng", "đèn", "cốp", "điều hòa", "màn hình", "loa", "ghế", "dẫn động", "chế độ", "cơ sở", "gầm"]):
+                    name, value = l1, l2
                 else:
-                    lines = [l.strip() for l in card.get_text(separator="\n").splitlines() if l.strip()]
-                    if len(lines) == 2:
-                        value, name = lines[0], lines[1]
-                    elif len(lines) >= 3:
-                        value, name = " ".join(lines[:-1]), lines[-1]
+                    name, value = l2, l1
+            elif len(lines) == 3:
+                # e.g. ["2514", "mm", "Chiều dài cơ sở"]
+                name = lines[-1]
+                value = f"{lines[0]} {lines[1]}"
 
-            if name and value and name not in ["ĐẶT CỌC", "Thông số tạo nên khác biệt", "ĐẶT CỌC NGAY"]:
+            if name and value and len(name) < 60 and len(value) < 60:
                 if name not in seen_names:
                     seen_names.add(name)
                     unit = None
@@ -191,7 +189,7 @@ class VinFastDOMParser:
         sections: List[FeatureSection] = []
         
         section_elements = self.body_container.select(
-            '[class*="pdp-section-class"], [class*="-section-"], [class*="pdp-section"]'
+            '[class*="pdp-section-class"], [class*="-section-"], [class*="pdp-section"], section'
         )
         
         if not section_elements:
@@ -209,7 +207,7 @@ class VinFastDOMParser:
             img_urls = []
             for img in sec.select('img'):
                 src = img.get('src') or img.get('data-src') or img.get('srcset')
-                if src:
+                if src and not any(p in src for p in ["vinbase", "cookielaw", "recaptcha"]):
                     img_urls.append(src.split()[0])
 
             raw_text = sec.get_text(separator="\n", strip=True)
@@ -266,7 +264,7 @@ class VinFastDOMParser:
 
         for img in self.body_container.select("img"):
             src = img.get("src") or img.get("data-src")
-            if src:
+            if src and not any(p in src for p in ["vinbase", "cookielaw", "recaptcha"]):
                 urls.add(src)
 
         for source in self.body_container.select("picture source"):
@@ -274,14 +272,14 @@ class VinFastDOMParser:
             if srcset:
                 for item in srcset.split(","):
                     u = item.strip().split(" ")[0]
-                    if u:
+                    if u and not any(p in u for p in ["vinbase", "cookielaw", "recaptcha"]):
                         urls.add(u)
 
         for el in self.body_container.find_all(style=True):
             style = el.get("style", "")
             matches = re.findall(r'url\(["\']?([^"\']+)["\']?\)', style)
             for m in matches:
-                if not m.startswith("data:"):
+                if not m.startswith("data:") and not any(p in m for p in ["vinbase", "cookielaw", "recaptcha"]):
                     urls.add(m)
 
         return urls
